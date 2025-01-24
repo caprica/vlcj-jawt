@@ -32,7 +32,7 @@ public class VlcjJawt {
      * from a jar artefact on the classpath to the system temporary directory,
      * and then loads that library.
      * <p>
-     * The library file be deleted when the JVM exits.
+     * The library file will be deleted when the JVM exits.
      */
     public VlcjJawt() {
         NativeLibraryLoader.loadNativeLibrary();
@@ -43,7 +43,7 @@ public class VlcjJawt {
      * from a jar artefact on the classpath to a specified directory, and then
      * loads that library.
      * <p>
-     * The library file be deleted when the JVM exits.
+     * The library file will be deleted when the JVM exits.
      *
      * @param libraryDirectory directory in which to extract the native library
      */
@@ -53,7 +53,10 @@ public class VlcjJawt {
 
     /**
      * Get the native window handle for am AWT (heavyweight) component.
-     *
+     * <p>
+     * The component must be in a displayable state, or visible, before using
+     * this method.
+     * <p>
      * This can only be used on Linux and Windows, it must not be used on macOS.
      */
     public native long getNativeWindowHandle(Component c);
