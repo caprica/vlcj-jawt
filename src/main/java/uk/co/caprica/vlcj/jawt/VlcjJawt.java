@@ -55,7 +55,8 @@ public class VlcjJawt {
      * Get the native window handle for am AWT (heavyweight) component.
      * <p>
      * The component must be in a displayable state, or visible, before using
-     * this method.
+     * this method - a component can be in a displayable state without being
+     * visible.
      * <p>
      * This can only be used on Linux and Windows, it must not be used on macOS.
      */
